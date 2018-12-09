@@ -32,7 +32,8 @@ in absence of an ID, which would indicate the payment has already been created.
 I've tried to keep the logic inside the classes, testing Thor commands is rather ugly and always ends
 up in testing 80% the Thor library and 20% the code underneath.
 This choice was mostly done because it's Sunday and I'm lazy, I'd test the CLI in a production environment.
-This is a test and I decided to search for Dilbert comics instead. KTNXBYE.
+This is a test and I decided to search for Dilbert comics instead.
+*KTNXBYE*
 
 
 ![Alt desc](https://github.com/nofeed/coolpay/blob/master/assets/dilbert.gif)
