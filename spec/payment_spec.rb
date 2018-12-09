@@ -15,6 +15,13 @@ RSpec.describe 'CoolPay::Payment' do
           headers: {})
   end
 
+  def stub_listing
+    stub_request(:get, "https://coolpay.herokuapp.com/api/payments").
+      to_return(status: 200,
+        body: "{\"payments\":[{\"status\":\"paid\",\"recipient_id\":\"ABC123\",\"id\":\"321CBA\",\"currency\":\"USD\",\"amount\":\"10\"},{\"status\":\"failed\",\"recipient_id\":\"123ABC\",\"id\":\"321CBA\",\"currency\":\"GBP\",\"amount\":\"10\"}]}",
+        headers: {})
+  end
+
   it "creates a payment" do
     stub_successful_recipient_search
     stub_creation
@@ -24,5 +31,11 @@ RSpec.describe 'CoolPay::Payment' do
     expect(payment.currency).to eq('USD')
     expect(payment.amount).to eq(10)
     expect(payment.status).to eq('processing')
+  end
+
+  it "lists all payments" do
+    stub_listing
+    payments = CoolPay::Payment.list
+    expect(payments.count).to eq(2)
   end
 end

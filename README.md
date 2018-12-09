@@ -1,0 +1,2 @@
+- No credentials saved, use your own
+- Searching recipients is quite weird

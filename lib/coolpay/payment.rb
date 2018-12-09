@@ -13,6 +13,14 @@ module CoolPay
       end
     end
 
+    def self.list
+      Oj.load(
+        RestClient.get(
+          CoolPay::PAYMENT_URL,
+          { content_type: 'application/json', authorization: CoolPay.authorization } )
+        )['payments']
+    end
+
     private
 
     def create

@@ -34,6 +34,14 @@ module CoolPay
       end
     end
 
+    desc "list", "lists all payments"
+    def list
+      authenticate!
+      Payment.list.each do |payment|
+        puts "Payment #{payment['id']} of #{payment['amount']} #{payment['currency']} to #{payment['recipient_id']} has status #{payment['status']}"
+      end
+    end
+
     no_commands do
       def authenticate!
         unless CoolPay.has_token?
