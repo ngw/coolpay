@@ -12,12 +12,12 @@ module CoolPay
       raise ArgumentError.new(err)
     end
 
-    desc "add_recipient RECIPIENT", "fetches an existing recipient or adds a new recipient to CoolPay"
-    def add_recipient(name)
+    desc "recipient RECIPIENT", "fetches an existing recipient or adds a new recipient to CoolPay"
+    def recipient(name)
       authenticate!
       recipient = Recipient.new(name: name)
       if recipient.id
-        puts "#{name} has been created with ID #{recipient.id}"
+        puts "#{name}:#{recipient.id} is ready to receive money"
       else
         raise RuntimeError.new("The recipient failed to create")
       end
