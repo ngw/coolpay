@@ -31,7 +31,7 @@ in absence of an ID, which would indicate the payment has already been created.
 `CoolApi::CLI` is almost untested.
 I've tried to keep the logic inside the classes, testing Thor commands is rather ugly and always ends
 up in testing 80% the Thor library and 20% the code underneath.
-10 This choice was mostly done because it's Sunday and I'm lazy, I'd test the CLI in a production environment.
+**10** This choice was mostly done because it's Sunday and I'm lazy, I'd test the CLI in a production environment.
 This is a test and I decided to search for Dilbert comics instead.
 
 `CoolPay::Payment#list` is not really usable. Product wise it should at least name the Recipients, but
