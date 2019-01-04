@@ -1,3 +1,7 @@
+This test didn't pass the selection for senior/tech lead position.
+The feedback has been that "they felt that there wasn’t a huge code base and it lacked some of the things around design and architecture that they would expect to see for somebody senior. They thought it was quite a basic solution which lacked some of the details they would want to see."
+As for what this means, I have no clue. I actually take the "there wasn't a huge code base" comment as a compliment.
+
 # Coolpay
 
 ```
